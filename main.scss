@@ -1,0 +1,16 @@
+.filtr-elem {
+    opacity: 1;
+    height: auto;
+    transition: all 1s ease-out;
+    &.hide {
+        display: none;
+    }
+}
+
+.images{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .filtr-elem {
+        width: 100%;
+    }
+}
