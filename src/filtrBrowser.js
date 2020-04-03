@@ -1,18 +1,23 @@
 const flStyles = {
     transitionOut: '',
     transitionIn: '',
+    useTransitions: false,
+    display: 'inherit',
     duration: 100
 }
 
 const filtr = {
-    load: ({ useTransition, transitionIn, transitionOut, duration }) => {
-        if (useTransition !== null && useTransition === true) {
+    load: ({ useTransitions, transitionIn, transitionOut, duration }) => {
+        if (useTransitions !== null && useTransitions === true) {
+            //check for transitions
             if (transitionIn !== null && transitionOut !== null) {
                 flStyles.transitionOut = transitionOut;
                 flStyles.transitionIn = transitionIn;
+                flStyles.useTransitions = useTransitions;
             } else {
                 console.error('TransitionIn or TransitionOut value is incorrect');
             }
+            // check the duration value
             if (duration != null && !isNaN(duration)) {
                 flStyles.duration = duration;
             } else {
@@ -24,31 +29,39 @@ const filtr = {
         const filters = document.querySelectorAll('.controls .filtr-btn');
         filters.forEach(filter => {
             filter.addEventListener('click', e => {
+                // get filtr value and elements
                 const toFiltr = e.target.getAttribute('data-filtr');
                 const listElems = document.querySelectorAll('.filtr-elem');
                 listElems.forEach((elem) => {
-                    elem.classList.add('animated');
-                    if (flStyles.transitionOut !== '') elem.classList.add(flStyles.transitionOut);
+                    if (elem.style.display !== '' && elem.style.display !== 'none') {
+                        flStyles.display = elem.style.display;
+                    }
+                    // only if transitions have value
+                    if (flStyles.useTransitions) {
+                        elem.classList.add('animated', flStyles.transitionOut);
+                    }
                     elem.style.transitionDuration = flStyles.duration;
                     setTimeout(() => {
                         elem.style.display = 'none';
-                        elem.classList.remove('animated');
-                        if (flStyles.transitionOut !== '') elem.classList.remove(flStyles.transitionOut);
-                        if (flStyles.transitionIn !== '') elem.classList.remove(flStyles.transitionIn);
+                        if (flStyles.useTransitions) {
+                            elem.classList.remove('animated', flStyles.transitionOut, flStyles.transitionIn);
+                        }
+                        // to show all the elements
                         if (toFiltr === '-') {
-                            elem.style.display = 'inherit';
-                            elem.classList.add('animated');
-                            if (flStyles.transitionIn !== '') elem.classList.add(flStyles.transitionIn);
+                            elem.style.display = flStyles.display;
+                            elem.classList.add('animated', flStyles.transitionIn);
                             return;
                         }
                     }, flStyles.duration);
                 });
                 listElems.forEach((elem) => {
+                    // filter the elements to show
                     if (elem.getAttribute('data-elem') === toFiltr) {
                         setTimeout(() => {
-                            elem.style.display = 'inherit';
-                            elem.classList.add('animated');
-                            if (flStyles.transitionIn !== '') elem.classList.add(flStyles.transitionIn);
+                            elem.style.display = flStyles.display;
+                            if (flStyles.useTransitions) {
+                                elem.classList.add('animated', flStyles.transitionIn);
+                            }
                             elem.style.transitionDuration = flStyles.duration;
                         }, flStyles.duration);
                     }
