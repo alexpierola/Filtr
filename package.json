@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/alexpierola/filtr.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["filter", "content", "web", "animation"],
+  "author": "Alex Pierola",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alexpierola/filtr/issues"
