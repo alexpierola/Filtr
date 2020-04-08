@@ -1,23 +1,23 @@
 {
-  "name": "filtr",
-  "version": "1.0.0",
-  "description": "Filtr helps you to show and hide the elements of your web site, it's customizable and easy to use.",
+  "name": "filtrr",
+  "version": "1.0.1",
+  "description": "Filtrr helps you to show and hide the elements of your web site, it's customizable and easy to use.",
   "main": "index.js",
   "bin": {
-    "filtr": "filtr.js"
+    "filtrr": "bin/filtrr.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexpierola/filtr.git"
+    "url": "git+https://github.com/alexpierola/filtrr.git"
   },
   "keywords": ["filter", "content", "web", "animation"],
   "author": "Alex Pierola",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexpierola/filtr/issues"
+    "url": "https://github.com/alexpierola/filtrr/issues"
   },
-  "homepage": "https://github.com/alexpierola/filtr#readme"
+  "homepage": "https://github.com/alexpierola/filtrr#readme"
 }

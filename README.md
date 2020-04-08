@@ -1,5 +1,5 @@
-# filtr
-Filtr helps you to show and hide the elements of your web site, it's customizable and easy to use.
+# filtrr
+Filtrr helps you to show and hide the elements of your web site, it's customizable and easy to use.
 
 ## Browser Support
 
@@ -9,24 +9,27 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | No |
 
 ## Usage
 ### JavaScript
-You can use filtr in two ways, in the case of using a framework like React JS or Angular you should import the file:
+You can use filtrr in two ways, in the case of using a framework like React JS or Angular you should import the file:
+```
+npm install filtrr
+```
 ```js
-import { filtr } from './filtr';
+import { filtrr } from 'filtrr';
 ```
 
 Or in case of Vanilla JS you should add the script tag:
 ```html
 <head>
-    <!-- it sets the constant filtr -->
-    <script src="filtrBrowser.min.js"></script>
+    <!-- it sets the constant filtrr -->
+    <script src="filtrrBrowser.min.js"></script>
 </head>
 ```
 
-And for both cases, you need to call to filtr and you can customize it or just use it:
+And for both cases, you need to call to filtrr and you can customize it or just use it:
 \* Note: to use transitions is required to import [animate.css](https://github.com/daneden/animate.css)
 ```js
 // OPTIONAL
-filtr.load({
+filtrr.load({
     // active or deactivate the transitions
     useTransitions: true,
     // transitions in effect
@@ -38,26 +41,26 @@ filtr.load({
 });
 
 // REQUIRED
-filtr.fire();
+filtrr.fire();
 ```
 
 ### HTML
-All the controls that manage what elements to show, must be inside of element with 'controls' class. To identify the filters is necessary that they have the 'filtr-btn' class.
-\* Note: '-' in the 'data-filter' attribute is the ONLY way to make that filtr shows everything.
+All the controls that manage what elements to show, must be inside of element with 'controls' class. To identify the filters is necessary that they have the 'filtrr-btn' class.
+\* Note: '-' in the 'data-filter' attribute is the ONLY way to make that filtrr shows everything.
 ```html
 <div class="controls">
-    <button class="filtr-btn button" data-filtr="-">All</button>
-    <button class="filtr-btn button" data-filtr="animal">Animal</button>
-    <button class="filtr-btn button" data-filtr="people">People</button>
-    <button class="filtr-btn button" data-filtr="art">Art</button>
+    <button class="filtrr-btn button" data-filtrr="-">All</button>
+    <button class="filtrr-btn button" data-filtrr="animal">Animal</button>
+    <button class="filtrr-btn button" data-filtrr="people">People</button>
+    <button class="filtrr-btn button" data-filtrr="art">Art</button>
 </div>
 ```
 
-To relate the filters to the elements, the elements to filter must have the class 'filtr-elem' and their 'data-elem' must be equal to the 'data-filtr' of the control.
+To relate the filters to the elements, the elements to filter must have the class 'filtrr-elem' and their 'data-elem' must be equal to the 'data-filtrr' of the control.
 ```html
-<img class="filtr-elem" data-elem="animal" src="image.jpg" alt="cat">
-<img class="filtr-elem" data-elem="animal" src="image.jpg" alt="fox">
-<img class="filtr-elem" data-elem="people" src="image.jpg" alt="friends">
+<img class="filtrr-elem" data-elem="animal" src="image.jpg" alt="cat">
+<img class="filtrr-elem" data-elem="animal" src="image.jpg" alt="fox">
+<img class="filtrr-elem" data-elem="people" src="image.jpg" alt="friends">
 ```
 ## License
 Licensed under [MIT license](https://opensource.org/licenses/MIT).

@@ -26,12 +26,12 @@ const load = ({ useTransitions, transitionIn, transitionOut, duration }) => {
 }
 
 const fire = () => {
-    const filters = document.querySelectorAll('.controls .filtr-btn');
+    const filters = document.querySelectorAll('.controls .filtrr-btn');
     filters.forEach(filter => {
         filter.addEventListener('click', e => {
-            // get filtr value and elements
-            const toFiltr = e.target.getAttribute('data-filtr');
-            const listElems = document.querySelectorAll('.filtr-elem');
+            // get filtrr value and elements
+            const tofiltrr = e.target.getAttribute('data-filtrr');
+            const listElems = document.querySelectorAll('.filtrr-elem');
             listElems.forEach((elem) => {
                 if (elem.style.display !== '' && elem.style.display !== 'none') {
                     flStyles.display = elem.style.display;
@@ -47,7 +47,7 @@ const fire = () => {
                         elem.classList.remove('animated', flStyles.transitionOut, flStyles.transitionIn);
                     }
                     // to show all the elements
-                    if (toFiltr === '-') {
+                    if (tofiltrr === '-') {
                         elem.style.display = flStyles.display;
                         elem.classList.add('animated', flStyles.transitionIn);
                         return;
@@ -56,7 +56,7 @@ const fire = () => {
             });
             listElems.forEach((elem) => {
                 // filter the elements to show
-                if (elem.getAttribute('data-elem') === toFiltr) {
+                if (elem.getAttribute('data-elem') === tofiltrr) {
                     setTimeout(() => {
                         elem.style.display = flStyles.display;
                         if (flStyles.useTransitions) {
@@ -70,7 +70,7 @@ const fire = () => {
     })
 }
 
-export const filtr = {
+export const filtrr = {
     load,
     fire
 }
