@@ -22,6 +22,8 @@ Or in case of Vanilla JS you should add the script tag:
 <head>
     <!-- it sets the constant filtrr -->
     <script src="filtrrBrowser.min.js"></script>
+    <!-- or use the CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/filtrr@VERSION/bin/filtrrBrowser.js"></script>
 </head>
 ```
 
